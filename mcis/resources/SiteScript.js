@@ -35,12 +35,20 @@ $(document).ready(function($) {
 				$('#AjaxLoaderImg').hide();
 				var dataObj = jQuery.parseJSON(data);				
 				if(dataObj.Status=='TRUE'){
-					clearModelForm();
+					$('#ModelName').val('');
+					$('#Manufacturer').val('');
+					$('#ModelColor').val('');
+					$('#ModelYear').val('');
+					$('#ModelRegistrationNo').val('');
+					$('#ModelNote').val('');
+					$('#ModelUploadFile1').val('');
+					$('#ModelUploadFile2').val('');
 					$('#AlertErrorSection').html('');
 					$('#AlertSuccessSection').html('<strong>Yeah!</strong> '+dataObj.Message);
 					$('#AlertSuccessSection').show();
 					$('#AlertErrorSection').hide();
 				}
+
 				else{
 					$('#AlertSuccessSection').html('');
 					$('#AlertErrorSection').html('<strong>Oops!</strong> '+dataObj.Message);
